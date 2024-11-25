@@ -1,7 +1,11 @@
+import { Header } from "./components/header";
+//import heroImage from "../src/assets/heroImg.png";
 export function App() {
   return (
-    <>
-      <h1>hello</h1>
-    </>
+    <div>
+      <div className="mx-14 h-screen relative pt-14 space-y-36">
+        <Header />
+      </div>
+    </div>
   );
 }
