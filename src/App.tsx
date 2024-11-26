@@ -1,4 +1,12 @@
-import { Building2, Download, Lamp, ShoppingBag } from "lucide-react";
+import {
+  Building2,
+  Download,
+  Lamp,
+  Mail,
+  Send,
+  ShoppingBag,
+  User,
+} from "lucide-react";
 
 import { Header } from "@/components/header";
 import { AboutCard } from "@/components/aboutCard";
@@ -16,6 +24,7 @@ import productsImg from "@/assets/productsimg.png";
 import googlePlay from "@/assets/IconGoogleplay.png";
 import IconApple from "@/assets/IconApple.png";
 import imgApp from "@/assets/imgApp.png";
+import contactImg from "@/assets/contactImg.png";
 
 export function App() {
   return (
@@ -203,9 +212,55 @@ export function App() {
         </div>
       </section>
       <section className="mt-36">
-        <h1 className="font-bold text-4xl text-center">Contacto</h1>
-        <div className="shadow-lg">
-          <form action=""></form>
+        <h1 className="font-bold text-4xl text-center mb-4">Contacto</h1>
+        <div className="shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] p-4 bg-white flex justify-between gap-24 rounded-2xl ">
+          <div className="space-y-6 w-11/12">
+            <h1 className="text-2xl font-bold">
+              Lorem ipsum dolor sit amet, Consectetur.
+            </h1>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and <br />
+              typesetting industry.
+            </p>
+            <form
+              action=""
+              className="placeholder-zinc-900 flex flex-col space-y-9"
+            >
+              <div className="flex items-center gap-2 border-primary/35 border-2 p-4 hover:border-secondary cursor-pointer">
+                <User className="text-secondary " />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Digita o seu nome"
+                  className="placeholder-zinc-900 outline-none flex-1"
+                />
+              </div>
+              <div className="flex items-center gap-2 border-primary/35 border-2 p-4 hover:border-secondary cursor-pointer">
+                <Mail className="text-secondary " />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Digita o seu nome"
+                  className="placeholder-zinc-900 outline-none flex-1"
+                />
+              </div>
+              <div className="flex gap-2 border-primary/35 border-2 h-28 items-start hover:border-secondary p-4 cursor-pointer">
+                <Send className="text-secondary" />
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Digite o seu nome"
+                  className="placeholder-zinc-900 outline-none flex-1 h-full resize-none overflow-hidden"
+                ></textarea>
+              </div>
+              <button className="bg-primary text-slate-100 p-4 font-bold">
+                Enviar mensagem
+              </button>
+            </form>
+          </div>
+          <img src={contactImg} alt="" />
         </div>
       </section>
     </div>
