@@ -1,8 +1,9 @@
-import { Building2, Lamp, ShoppingBag } from "lucide-react";
+import { Building2, Download, Lamp, ShoppingBag } from "lucide-react";
 
 import { Header } from "@/components/header";
 import { AboutCard } from "@/components/aboutCard";
 import { ProductsCard } from "@/components/productsCard";
+import { ProductsSlider } from "@/components/productsSlider";
 
 import heroImage from "@/assets/heroImg.png";
 import otherImgHero from "@/assets/othersImgHero.png";
@@ -10,7 +11,10 @@ import elipseImg from "@/assets/Ellipse.png";
 import smallElipseImg from "@/assets/smallEllipse.png";
 import aboutImg from "@/assets/aboutImg.png";
 import productsImg from "@/assets/productsimg.png";
-import { ProductsSlider } from "@/components/productsSlider";
+import googlePlay from "@/assets/IconGoogleplay.png";
+import IconApple from "@/assets/IconApple.png";
+import imgApp from "@/assets/imgApp.png";
+import { TestimonySlider } from "./components/testimonySlider";
 
 export function App() {
   return (
@@ -143,6 +147,63 @@ export function App() {
         </p>
         <div className=" mt-12 mx-14">
           <ProductsSlider />
+        </div>
+      </section>
+      <section className="mt-36 flex gap-9">
+        <div className="bg-secondary rounded-md">
+          <img src={imgApp} alt="" className="h-[40rem]" />
+        </div>
+        <div className=" space-y-6">
+          <h1 className="font-bold text-4xl">
+            Faça o download do nosso aplicativo
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
+            <br />
+            eiusmod tempor incididunt ut labore et dolore <br /> magna aliqua.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
+            <br />
+            eiusmod tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
+            <br />
+            eiusmod tempor incididunt.
+          </p>
+          <div className="flex items-center gap-6">
+            <button className="bg-zinc-950 flex text-slate-100 w-44 gap-4 items-center p-2 rounded-md">
+              <img src={IconApple} alt="" />
+              <span>
+                <p className="text-sm">Disponível na </p>
+                <h1 className="text-lg">App Store</h1>
+              </span>
+            </button>
+            <button className="bg-zinc-950 flex text-slate-100 w-44 gap-4 items-center p-2 rounded-md">
+              <img src={googlePlay} alt="" />
+              <span>
+                <p className="text-sm">Disponível na </p>
+                <h1 className="text-lg">App Store</h1>
+              </span>
+            </button>
+          </div>
+          <button className="bg-primary text-slate-100 w-40 gap-4 flex items-center p-2 rounded-md justify-center">
+            Download <Download />
+          </button>
+        </div>
+      </section>
+      <section className="mt-36">
+        <h1 className="text-center text-4xl font-bold">
+          Testemunho dos nossos clientes
+        </h1>
+        <p className="text-center mt-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut <br />
+          labore et dolore magna aliqua.
+        </p>
+        <div className=" mt-12 mx-14">
+          <TestimonySlider />
         </div>
       </section>
     </div>
