@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import iconAboutImg from "../../src/assets/iconAboutCard.png";
+import iconAboutImg from "@/assets/iconAboutCard.png";
 interface aboutCardProps {
   icon: ReactNode;
   title: string;

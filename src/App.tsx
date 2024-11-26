@@ -1,15 +1,16 @@
 import { Building2, Lamp, ShoppingBag } from "lucide-react";
 
-import { Header } from "./components/header";
-import { AboutCard } from "./components/aboutCard";
-import { ProductsCard } from "./components/productsCard";
+import { Header } from "@/components/header";
+import { AboutCard } from "@/components/aboutCard";
+import { ProductsCard } from "@/components/productsCard";
 
-import heroImage from "../src/assets/heroImg.png";
-import otherImgHero from "../src/assets/othersImgHero.png";
-import elipseImg from "../src/assets/Ellipse.png";
-import smallElipseImg from "../src/assets/smallEllipse.png";
-import aboutImg from "../src/assets/aboutImg.png";
-import productsImg from "../src/assets/productsimg.png";
+import heroImage from "@/assets/heroImg.png";
+import otherImgHero from "@/assets/othersImgHero.png";
+import elipseImg from "@/assets/Ellipse.png";
+import smallElipseImg from "@/assets/smallEllipse.png";
+import aboutImg from "@/assets/aboutImg.png";
+import productsImg from "@/assets/productsimg.png";
+import { ProductsSlider } from "@/components/productsSlider";
 
 export function App() {
   return (
@@ -128,6 +129,20 @@ export function App() {
               content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
             />
           </div>
+        </div>
+      </section>
+      <section className="pt-36">
+        <h1 className="text-center font-bold text-4xl">
+          Conheça os nossos produtos
+        </h1>
+        <p className="text-center mt-4">
+          Desfrute de momentos de relaxamento com o nosso sofá retrátil de couro
+          ecológico. Com design moderno e acabamento impecável, ele se adapta
+          perfeitamente a qualquer ambiente. <br /> Seu revestimento em couro
+          ecológico é fácil de limpar e proporciona um toque suave e elegante
+        </p>
+        <div className=" mt-12 mx-14">
+          <ProductsSlider />
         </div>
       </section>
     </div>
