@@ -1,16 +1,20 @@
-import { ShoppingBag } from "lucide-react";
+import { Building2, Lamp, ShoppingBag } from "lucide-react";
 
 import { Header } from "./components/header";
+import { AboutCard } from "./components/aboutCard";
+import { ProductsCard } from "./components/productsCard";
 
 import heroImage from "../src/assets/heroImg.png";
 import otherImgHero from "../src/assets/othersImgHero.png";
 import elipseImg from "../src/assets/Ellipse.png";
 import smallElipseImg from "../src/assets/smallEllipse.png";
+import aboutImg from "../src/assets/aboutImg.png";
+import productsImg from "../src/assets/productsimg.png";
 
 export function App() {
   return (
-    <div>
-      <div className="mx-14 h-screen relative pt-14 space-y-36">
+    <div className="mx-14">
+      <div className="h-screen relative pt-14 space-y-36">
         <Header />
         <div className="flex items-center gap-6">
           <img
@@ -53,6 +57,79 @@ export function App() {
           </div>
         </div>
       </div>
+      <section className="flex justify-between pt-36">
+        <div className="space-y-9">
+          <h1 className="font-bold text-4xl">
+            A Cama King Size Luxo Confort é a combinação perfeita de elegância
+            conforto <br /> e durabilidade.
+          </h1>
+          <div className="space-y-9">
+            <AboutCard
+              icon={<Building2 />}
+              title="Lorem ipsum dolor sit"
+              description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
+              state={true}
+            />
+            <AboutCard
+              icon={<Building2 />}
+              title="Lorem ipsum dolor sit"
+              description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
+              state={true}
+            />
+            <AboutCard
+              icon={<Building2 />}
+              title="Lorem ipsum dolor sit"
+              description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
+              state={true}
+            />
+          </div>
+        </div>
+        <img
+          src={aboutImg}
+          className="h-[806px]"
+          alt="about image of motel room"
+        />
+      </section>
+      <section className="pt-36">
+        <h1 className="text-center font-bold text-4xl">Produtos</h1>
+        <p className="text-center text-base mt-4">
+          Descubra nossa ampla variedade de imóveis, desde aconchegantes
+          apartamentos até espaçosas casas em bairros prestigiados. <br /> Todos
+          os imóveis são cuidadosamente selecionados para garantir que você
+          encontre exatamente o que procura.
+        </p>
+        <div className="flex space-x-12 mt-12">
+          <div className="space-y-12">
+            <ProductsCard
+              icon={<Lamp />}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            />
+            <ProductsCard
+              icon={<Lamp />}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            />
+            <ProductsCard
+              icon={<Lamp />}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            />
+          </div>
+          <img src={productsImg} alt="products image" className="h-[806px]" />
+          <div className="space-y-12">
+            <ProductsCard
+              icon={<Lamp />}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            />
+            <ProductsCard
+              icon={<Lamp />}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            />
+            <ProductsCard
+              icon={<Lamp />}
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
