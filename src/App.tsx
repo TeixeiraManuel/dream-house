@@ -4,6 +4,8 @@ import { Header } from "@/components/header";
 import { AboutCard } from "@/components/aboutCard";
 import { ProductsCard } from "@/components/productsCard";
 import { ProductsSlider } from "@/components/productsSlider";
+import { TestimonySlider } from "./components/testimonySlider";
+import { QuestionsCard } from "./components/questionsCard";
 
 import heroImage from "@/assets/heroImg.png";
 import otherImgHero from "@/assets/othersImgHero.png";
@@ -14,7 +16,6 @@ import productsImg from "@/assets/productsimg.png";
 import googlePlay from "@/assets/IconGoogleplay.png";
 import IconApple from "@/assets/IconApple.png";
 import imgApp from "@/assets/imgApp.png";
-import { TestimonySlider } from "./components/testimonySlider";
 
 export function App() {
   return (
@@ -69,24 +70,17 @@ export function App() {
             conforto <br /> e durabilidade.
           </h1>
           <div className="space-y-9">
-            <AboutCard
-              icon={<Building2 />}
-              title="Lorem ipsum dolor sit"
-              description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
-              state={true}
-            />
-            <AboutCard
-              icon={<Building2 />}
-              title="Lorem ipsum dolor sit"
-              description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
-              state={true}
-            />
-            <AboutCard
-              icon={<Building2 />}
-              title="Lorem ipsum dolor sit"
-              description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
-              state={true}
-            />
+            {Array.from({ length: 3 }).map((_, index) => {
+              return (
+                <AboutCard
+                  key={index}
+                  icon={<Building2 />}
+                  title="Lorem ipsum dolor sit"
+                  description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
+                  state={true}
+                />
+              );
+            })}
           </div>
         </div>
         <img
@@ -105,33 +99,27 @@ export function App() {
         </p>
         <div className="flex space-x-12 mt-12">
           <div className="space-y-12">
-            <ProductsCard
-              icon={<Lamp />}
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            />
-            <ProductsCard
-              icon={<Lamp />}
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            />
-            <ProductsCard
-              icon={<Lamp />}
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            />
+            {Array.from({ length: 3 }).map((_, index) => {
+              return (
+                <ProductsCard
+                  key={index}
+                  icon={<Lamp />}
+                  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                />
+              );
+            })}
           </div>
           <img src={productsImg} alt="products image" className="h-[806px]" />
           <div className="space-y-12">
-            <ProductsCard
-              icon={<Lamp />}
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            />
-            <ProductsCard
-              icon={<Lamp />}
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            />
-            <ProductsCard
-              icon={<Lamp />}
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            />
+            {Array.from({ length: 3 }).map((_, index) => {
+              return (
+                <ProductsCard
+                  key={index}
+                  icon={<Lamp />}
+                  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                />
+              );
+            })}
           </div>
         </div>
       </section>
@@ -204,6 +192,20 @@ export function App() {
         </p>
         <div className=" mt-12 mx-14">
           <TestimonySlider />
+        </div>
+      </section>
+      <section className="mt-36 space-y-8">
+        <h1 className="font-bold text-center text-4xl">Perguntas frequentes</h1>
+        <div className="space-y-4 ">
+          <QuestionsCard />
+          <QuestionsCard />
+          <QuestionsCard />
+        </div>
+      </section>
+      <section className="mt-36">
+        <h1 className="font-bold text-4xl text-center">Contacto</h1>
+        <div className="shadow-lg">
+          <form action=""></form>
         </div>
       </section>
     </div>
