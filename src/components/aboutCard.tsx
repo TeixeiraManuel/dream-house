@@ -9,7 +9,10 @@ interface aboutCardProps {
 
 export function AboutCard({ icon, title, description, state }: aboutCardProps) {
   return (
-    <div className="hover:bg-secondary border-2 border-primary/10 p-4 rounded-md w-11/12 space-y-4 shadow-md cursor-pointer transition-colors">
+    <div
+      data-aos="fade-right"
+      className="hover:bg-secondary border-2 border-primary/10 p-4 rounded-md w-11/12 space-y-4 shadow-md cursor-pointer transition-colors"
+    >
       <div className="flex items-center justify-between">
         <div className=" bg-primary/25 hover:bg-slate-100 rounded-full p-4 text-primary">
           {icon}
