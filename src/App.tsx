@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import {
   Building2,
   Download,
@@ -16,6 +18,9 @@ import { TestimonySlider } from "./components/testimonySlider";
 import { QuestionsCard } from "./components/questionsCard";
 import { Footer } from "./components/footer";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import heroImage from "@/assets/heroImg.png";
 import otherImgHero from "@/assets/othersImgHero.png";
 import elipseImg from "@/assets/Ellipse.png";
@@ -28,41 +33,57 @@ import imgApp from "@/assets/imgApp.png";
 import contactImg from "@/assets/contactImg.png";
 
 export function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
   return (
     <>
       <div className="mx-14">
         <div className="h-screen relative pt-14 space-y-36">
           <Header />
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6" data-aos="fade-up">
             <img
               className="h-[45rem] w-[50rem] before:content-[''] before:block before:absolute before:w-full before:h-[100vh] before:bg-no-repeat before:-left-26 before:top-[10px] before:z-50  before:bg-[url('/src/assets/circleBeforeHero.png')]"
               src={heroImage}
               alt="Hero image"
+              data-aos="fade-up"
             />
-            <div className="space-y-5 relative">
+            <div className="space-y-5 relative" data-aos="fade-down-left">
               <h1 className="font-bold text-3xl w-[60rem]">
                 <span className="text-secondary">Casa dos Sonhos</span>, onde
                 ajudamos você a encontrar o lar perfeito para sua família.
-                descobrir uma seleção exclusiva de imóveis que atendem a todas
-                as suas necessidades.
+                Descubra uma seleção exclusiva de imóveis que atendem a todas as
+                suas necessidades.
               </h1>
-              <p className="text-lg">
+              <p className="text-lg" data-aos="fade-up">
                 Com anos de experiência no mercado imobiliário, estamos prontos
-                para guiá-lo <br /> em cada etapa do processo.
+                para guiá-lo em cada etapa do processo.
               </p>
-              <button className="text-slate-100 bg-secondary w-40 h-10 font-bold flex items-center justify-center gap-2 rounded-md">
+              <button
+                className="text-slate-100 bg-secondary w-40 h-10 font-bold flex items-center justify-center gap-2 rounded-md"
+                data-aos="fade-up"
+              >
                 Comprar agora
                 <ShoppingBag size={18} />
               </button>
-              <img src={elipseImg} alt="" className="absolute right-0 top-32" />
+              <img
+                src={elipseImg}
+                alt=""
+                className="absolute right-0 top-32"
+                data-aos="fade-up"
+              />
               <div className="flex items-start gap-32">
-                <img src={otherImgHero} alt="" />
-                <div>
+                <img src={otherImgHero} alt="" data-aos="fade-left" />
+                <div data-aos="fade-left">
                   <h5 className="font-bold text-xl">123 Milhões+</h5>
                   <p className="font-bold">
-                    Descubra nossa ampla variedade de imóveis, desde <br />
-                    aconchegantes apartamentos até espaçosas <br /> casas em
-                    bairros prestigiados
+                    Descubra nossa ampla variedade de imóveis, desde
+                    aconchegantes apartamentos até espaçosas casas em bairros
+                    prestigiados.
                   </p>
                 </div>
               </div>
@@ -70,67 +91,77 @@ export function App() {
                 src={smallElipseImg}
                 alt=""
                 className="absolute right-36 top-42"
+                data-aos="fade-right"
               />
             </div>
           </div>
         </div>
-        <section className="flex justify-between pt-36">
+
+        {/* Primeira seção com animação */}
+        <section className="flex justify-between pt-36" data-aos="fade-up">
           <div className="space-y-9">
             <h1 className="font-bold text-4xl">
               A Cama King Size Luxo Confort é a combinação perfeita de elegância
-              conforto <br /> e durabilidade.
+              conforto e durabilidade.
             </h1>
             <div className="space-y-9">
-              {Array.from({ length: 3 }).map((_, index) => {
-                return (
-                  <AboutCard
-                    key={index}
-                    icon={<Building2 />}
-                    title="Lorem ipsum dolor sit"
-                    description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
-                    state={true}
-                  />
-                );
-              })}
+              {Array.from({ length: 3 }).map((_, index) => (
+                <AboutCard
+                  key={index}
+                  icon={<Building2 />}
+                  title="Lorem ipsum dolor sit"
+                  description="Lorem ipsum dolor sit amet, consectetur elit, eiusmod tempor incididunt ut labore et dolore magna aliqua, Ut enim ad minim veniam."
+                  state={true}
+                  data-aos="fade-up"
+                />
+              ))}
             </div>
           </div>
           <img
             src={aboutImg}
             className="h-[806px]"
             alt="about image of motel room"
+            data-aos="fade-up"
           />
         </section>
-        <section className="pt-36">
-          <h1 className="text-center font-bold text-4xl">Produtos</h1>
-          <p className="text-center text-base mt-4">
+
+        {/* Seção de Produtos */}
+        <section className="pt-36" data-aos="fade-up">
+          <h1 className="text-center font-bold text-4xl" data-aos="fade-up">
+            Produtos
+          </h1>
+          <p className="text-center text-base mt-4" data-aos="fade-up">
             Descubra nossa ampla variedade de imóveis, desde aconchegantes
-            apartamentos até espaçosas casas em bairros prestigiados. <br />{" "}
-            Todos os imóveis são cuidadosamente selecionados para garantir que
-            você encontre exatamente o que procura.
+            apartamentos até espaçosas casas em bairros prestigiados. Todos os
+            imóveis são cuidadosamente selecionados para garantir que você
+            encontre exatamente o que procura.
           </p>
           <div className="flex space-x-12 mt-12">
             <div className="space-y-12">
-              {Array.from({ length: 3 }).map((_, index) => {
-                return (
+              {Array.from({ length: 3 }).map((_, index) => (
+                <div key={index} data-aos="fade-right">
                   <ProductsCard
-                    key={index}
                     icon={<Lamp />}
-                    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                   />
-                );
-              })}
+                </div>
+              ))}
             </div>
-            <img src={productsImg} alt="products image" className="h-[806px]" />
+            <img
+              src={productsImg}
+              alt="products image"
+              className="h-[806px]"
+              data-aos="zoom-in"
+            />
             <div className="space-y-12">
-              {Array.from({ length: 3 }).map((_, index) => {
-                return (
+              {Array.from({ length: 3 }).map((_, index) => (
+                <div key={index} data-aos="fade-left">
                   <ProductsCard
-                    key={index}
                     icon={<Lamp />}
-                    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                   />
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -145,131 +176,157 @@ export function App() {
             couro ecológico é fácil de limpar e proporciona um toque suave e
             elegante
           </p>
-          <div className=" mt-12 mx-14">
+          <div className=" mt-12 mx-14" data-aos="fade-up">
             <ProductsSlider />
           </div>
         </section>
-        <section className="mt-36 flex gap-9">
+        {/* Aplicação do AOS para a próxima seção */}
+        <section className="mt-36 flex gap-9" data-aos="fade-up">
           <div className="bg-secondary rounded-md">
-            <img src={imgApp} alt="" className="h-[40rem]" />
+            <img src={imgApp} alt="" className="h-[40rem]" data-aos="zoom-in" />
           </div>
           <div className=" space-y-6">
-            <h1 className="font-bold text-4xl">
+            <h1 className="font-bold text-4xl" data-aos="fade-left">
               Faça o download do nosso aplicativo
             </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
-              <br />
-              eiusmod tempor incididunt ut labore et dolore <br /> magna aliqua.
+            <p data-aos="fade-up">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
-              <br />
+            <p data-aos="fade-up">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do{" "}
-              <br />
+            <p data-aos="fade-up">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6" data-aos="fade-up">
               <button className="bg-zinc-950 flex text-slate-100 w-44 gap-4 items-center p-2 rounded-md">
                 <img src={IconApple} alt="" />
                 <span>
-                  <p className="text-sm">Disponível na </p>
+                  <p className="text-sm">Disponível na</p>
                   <h1 className="text-lg">App Store</h1>
                 </span>
               </button>
               <button className="bg-zinc-950 flex text-slate-100 w-44 gap-4 items-center p-2 rounded-md">
                 <img src={googlePlay} alt="" />
                 <span>
-                  <p className="text-sm">Disponível na </p>
-                  <h1 className="text-lg">App Store</h1>
+                  <p className="text-sm">Disponível na</p>
+                  <h1 className="text-lg">Google Play</h1>
                 </span>
               </button>
             </div>
             <button className="bg-primary text-slate-100 w-40 gap-4 flex items-center p-2 rounded-md justify-center">
-              Download <Download />
+              Download
+              <Download />
             </button>
           </div>
         </section>
+
+        {/* Testemunhos */}
         <section className="mt-36">
-          <h1 className="text-center text-4xl font-bold">
+          <h1 className="text-center text-4xl font-bold" data-aos="fade-up">
             Testemunho dos nossos clientes
           </h1>
-          <p className="text-center mt-4">
+          <p className="text-center mt-4" data-aos="fade-up">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut <br />
-            labore et dolore magna aliqua.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <div className=" mt-12 mx-14">
+          <div className="mt-12 mx-14" data-aos="fade-up">
             <TestimonySlider />
           </div>
         </section>
-        <section className="mt-36 space-y-8">
-          <h1 className="font-bold text-center text-4xl">
+
+        {/* Perguntas Frequentes */}
+        <section className="mt-36 space-y-8" data-aos="fade-up">
+          <h1 className="font-bold text-center text-4xl" data-aos="fade-up">
             Perguntas frequentes
           </h1>
-          <div className="space-y-4 ">
-            <QuestionsCard />
-            <QuestionsCard />
-            <QuestionsCard />
+          <div className="space-y-4">
+            <QuestionsCard data-aos="fade-up" />
+            <QuestionsCard data-aos="fade-up" />
+            <QuestionsCard data-aos="fade-up" />
           </div>
         </section>
-        <section className="mt-36">
-          <h1 className="font-bold text-4xl text-center mb-4">Contacto</h1>
-          <div className="shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] p-4 bg-white flex justify-between gap-24 rounded-2xl ">
+
+        {/* Seção de Contato */}
+        <section className="mt-36" data-aos="fade-up">
+          <h1
+            className="font-bold text-4xl text-center mb-4"
+            data-aos="fade-up"
+          >
+            Contacto
+          </h1>
+          <div
+            className="shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] p-4 bg-white flex justify-between gap-24 rounded-2xl"
+            data-aos="fade-up"
+          >
             <div className="space-y-6 w-11/12">
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-2xl font-bold" data-aos="fade-left">
                 Lorem ipsum dolor sit amet, Consectetur.
               </h1>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and <br />
-                typesetting industry.
+              <p data-aos="fade-left">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
               </p>
               <form
                 action=""
                 className="placeholder-zinc-900 flex flex-col space-y-9"
               >
-                <div className="flex items-center gap-2 border-primary/35 border-2 p-4 hover:border-secondary cursor-pointer">
-                  <User className="text-secondary " />
+                <div
+                  className="flex items-center gap-2 border-primary/35 border-2 p-4 hover:border-secondary cursor-pointer"
+                  data-aos="fade-left"
+                >
+                  <User className="text-secondary" />
                   <input
                     type="text"
                     name=""
                     id=""
-                    placeholder="Digita o seu nome"
+                    placeholder="Digite o seu nome"
                     className="placeholder-zinc-900 outline-none flex-1"
                   />
                 </div>
-                <div className="flex items-center gap-2 border-primary/35 border-2 p-4 hover:border-secondary cursor-pointer">
-                  <Mail className="text-secondary " />
+                <div
+                  className="flex items-center gap-2 border-primary/35 border-2 p-4 hover:border-secondary cursor-pointer"
+                  data-aos="fade-left"
+                >
+                  <Mail className="text-secondary" />
                   <input
-                    type="text"
+                    type="email"
                     name=""
                     id=""
-                    placeholder="Digita o seu nome"
+                    placeholder="Digite o seu email"
                     className="placeholder-zinc-900 outline-none flex-1"
                   />
                 </div>
-                <div className="flex gap-2 border-primary/35 border-2 h-28 items-start hover:border-secondary p-4 cursor-pointer">
+                <div
+                  className="flex gap-2 border-primary/35 border-2 h-28 items-start hover:border-secondary p-4 cursor-pointer"
+                  data-aos="fade-left"
+                >
                   <Send className="text-secondary" />
                   <textarea
                     name=""
                     id=""
-                    placeholder="Digite o seu nome"
+                    placeholder="Digite a sua mensagem"
                     className="placeholder-zinc-900 outline-none flex-1 h-full resize-none overflow-hidden"
                   ></textarea>
                 </div>
-                <button className="bg-primary text-slate-100 p-4 font-bold">
+                <button
+                  className="bg-primary text-slate-100 p-4 font-bold"
+                  data-aos="fade-up"
+                >
                   Enviar mensagem
                 </button>
               </form>
             </div>
-            <img src={contactImg} alt="" />
+            <img src={contactImg} alt="" data-aos="fade-right" />
           </div>
         </section>
       </div>
-      <Footer />
+
+      {/* Footer */}
+      <Footer data-aos="fade-up" />
     </>
   );
 }
