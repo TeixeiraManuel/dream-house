@@ -67,16 +67,16 @@ export function TestimonySlider() {
         opts={{
           align: "start",
         }}
-        className="w-full min-w-sm"
+        className="w-full min-w-sm mb-6"
       >
-        <CarouselContent className="">
+        <CarouselContent>
           {data.map((item, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 ">
               <div className="p-1 ">
                 <Card>
-                  <CardContent className=" aspect-square space-y-6">
+                  <CardContent className=" aspect-square md:space-y-6">
                     <img src={item.image} alt="slider image" />
-                    <div className="space-y-6 p-6">
+                    <div className="space-y-2 md:space-y-6 p-6">
                       <h1 className="font-bold text-2xl">Mario Pedro</h1>
                       <div className="space-y-2">
                         <p> {item.description} </p>
@@ -85,7 +85,10 @@ export function TestimonySlider() {
 
                       <div className="flex flex-row gap-1">
                         {Array.from({ length: 5 }).map((_, index) => (
-                          <span key={index} className="text-yellow-400">
+                          <span
+                            key={index}
+                            className="text-yellow-400 hover:scale-125 transition-shadow hover:text-yellow-500 hover:transition-shadow cursor-pointer"
+                          >
                             <Star />
                           </span>
                         ))}
@@ -97,17 +100,18 @@ export function TestimonySlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className=" border-primary/30" />
-        <CarouselNext className="bg-secondary text-slate-100" />
+        <CarouselPrevious className=" border-primary/30 hidden md:flex" />
+        <CarouselNext className="bg-secondary text-slate-100 hidden md:flex" />
       </Carousel>
       <div className="py-2 text-sm flex items-center justify-center gap-3">
         {Array.from({ length: count }).map((_, index) => {
           return (
             <span
               className={`
+                
                 ${
                   index + 1 === current
-                    ? "bg-secondary p-2 rounded-full"
+                    ? "bg-secondary p-2 rounded-full "
                     : "bg-secondary/55 p-2 rounded-full"
                 }
               `}

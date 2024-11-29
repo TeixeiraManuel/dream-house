@@ -71,21 +71,21 @@ export function ProductsSlider() {
         opts={{
           align: "start",
         }}
-        className="w-full min-w-sm"
+        className="w-full min-w-sm mb-6"
       >
         <CarouselContent className="">
           {data.map((item, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 ">
               <div className="p-1 ">
                 <Card>
-                  <CardContent className=" aspect-square space-y-6">
+                  <CardContent className=" aspect-square md:space-y-6">
                     <img src={item.image} alt="slider image" />
-                    <div className="space-y-6 p-6">
+                    <div className="space-y-2 md:space-y-6 p-6">
                       <h1 className="font-bold text-4xl">Descrição</h1>
                       <p> {item.description} </p>
                       <h1 className="font-bold text-4xl">Preço</h1>
                       <p> {item.price} </p>
-                      <button className=" flex  items-center gap-4 hover:bg-primary hover:text-slate-100 transition-colors border-2 border-primary/20 p-2 rounded-md shadow-md">
+                      <button className=" flex  items-center gap-4 hover:bg-primary hover:scale-105 hover:transition-colors hover:text-slate-100 transition-colors border-2 border-primary/20 p-2 rounded-md shadow-md">
                         Comprar agora
                         <ShoppingBag size={18} />
                       </button>
@@ -96,8 +96,8 @@ export function ProductsSlider() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className=" border-primary/30" />
-        <CarouselNext className="bg-secondary text-slate-100" />
+        <CarouselPrevious className=" border-primary/30 hidden md:flex" />
+        <CarouselNext className="bg-secondary text-slate-100 hidden md:flex" />
       </Carousel>
       <div className="py-2 text-sm flex items-center justify-center gap-3">
         {Array.from({ length: count }).map((_, index) => {

@@ -4,7 +4,7 @@ import { ListFooter } from "./listFooter";
 
 export function Footer() {
   return (
-    <footer className="mt-36 bg-primary px-12 py-4">
+    <footer className="mt-36 bg-primary px-4 md:px-12 py-4">
       <div>
         <div>
           <div className="flex items-center gap-4">
@@ -20,7 +20,7 @@ export function Footer() {
           </p>
         </div>
       </div>
-      <div className="flex justify-end gap-16">
+      <div className="flex flex-wrap sm:flex-row md:justify-end gap-6 md:gap-4 sm:gap-16 mt-4">
         <ListFooter
           title="Fins"
           oneItem="Pagamento"
@@ -46,33 +46,33 @@ export function Footer() {
           threeItem="Contacto"
         />
       </div>
-      <div className="flex justify-end items-center gap-3 my-12">
+      <div className="flex md:justify-end items-center gap-3 my-12 ">
         <a
           href="#"
-          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full"
+          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full hover:scale-105 transition-shadow hover:transition-shadow"
         >
           <Linkedin />
         </a>
         <a
           href="#"
-          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full"
+          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full hover:scale-105 transition-shadow hover:transition-shadow"
         >
           <Facebook />
         </a>
         <a
           href="#"
-          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full"
+          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full hover:scale-105 transition-shadow hover:transition-shadow"
         >
           <Instagram />
         </a>
         <a
           href="#"
-          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full"
+          className="bg-secondary p-2 text-slate-100 hover:bg-secondary/80 rounded-full hover:scale-105 transition-shadow hover:transition-shadow"
         >
           <Twitch />
         </a>
       </div>
-      <p className="text-slate-100 text-center">
+      <p className="text-slate-100 md:text-center">
         2024 © All rights reserved by Teixeira Manuel
       </p>
     </footer>
